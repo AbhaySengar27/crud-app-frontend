@@ -9,7 +9,7 @@ const AddUser = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:5000/api/users', {
+        axios.post('https://crud-app-backend-9rgr.onrender.com/api/users', {
             name: name,
             email: email,
             age: age
