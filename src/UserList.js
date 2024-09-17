@@ -12,7 +12,7 @@ const UserList = () => {
     }, []);
 
     const fetchUsers = () => {
-        axios.get('http://localhost:5000/api/users')
+        axios.get('https://crud-app-backend-9rgr.onrender.com/api/users')
             .then(response => {
                 setUsers(response.data);
             })
@@ -22,7 +22,7 @@ const UserList = () => {
     };
 
     const deleteUser = (id) => {
-        axios.delete(`http://localhost:5000/api/users/${id}`)
+        axios.delete(`https://crud-app-backend-9rgr.onrender.com/api/users/${id}`)
             .then(() => {
                 fetchUsers();  // Refresh the list after deletion
             })
@@ -45,7 +45,7 @@ const UserList = () => {
 
     // Handles the Save button click to save the updated user details
     const handleSaveClick = (id) => {
-        axios.put(`http://localhost:5000/api/users/${id}`, editUserData)
+        axios.put(`https://crud-app-backend-9rgr.onrender.com/api/users/${id}`, editUserData)
             .then(() => {
                 setEditingUserId(null);  // Exit editing mode after saving
                 fetchUsers();  // Refresh the user list
